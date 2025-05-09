@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zeit</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Geist Mono", monospace;
+      background: #000;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+    }
+
+    .logo-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+      filter: brightness(1.5);
+    }
+
+    .signup-button {
+      padding: 7px 24px;
+      background: linear-gradient(to right, #4facfe, #0050ff);
+      border: none;
+      border-radius: 999px;
+      color: white;
+      font-size: 16px;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .signup-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(100, 100, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .right-section {
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .signup-button {
+        margin-top: -8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-name">Zeit</div>
+    <div class="right-section">
+      <div class="social-icons">
+        <a href="https://discord.gg/VYntqjCWGK"><img src="./img/discord.svg" alt="Discord" /></a>
+        <a href="https://instagram.com"><img src="./img/instagram.svg" alt="Instagram" /></a>
+      </div>
+      <button class="signup-button">Sign Up</button>
+    </div>
+  </header>
+
+</body>
+</html
