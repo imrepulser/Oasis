@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="SocialNet, inspiration, directory, academy, jobs, engineering, books" />
-  <meta name="author" content="Sreeman Reddy" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="SocialNet" />
-  <meta property="og:description" content="Explore, learn, and grow on SocialNet." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourwebsite.com" />
-  <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SocialNet" />
-  <meta name="twitter:description" content="Explore, learn, and grow on SocialNet." />
-  <meta name="twitter:image" content="./img/twitterimg.jpg" />
-  <title>SocialNet - A digital library.</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="SocialNet, inspiration, directory, academy, jobs, engineering, books" />
+    <meta name="author" content="Sreeman Reddy" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="SocialNet" />
+    <meta property="og:description" content="Explore, learn, and grow on SocialNet." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SocialNet" />
+    <meta name="twitter:description" content="Explore, learn, and grow on SocialNet." />
+    <meta name="twitter:image" content="./img/twitterimg.jpg" />
+    <title>SocialNet - A digital library.</title>
   <style>
     body {
       margin: 0;
@@ -24,6 +24,7 @@
     }
 
     header {
+      background-color: #eee;
       padding: 10px 20px;
       display: flex;
       align-items: center;
@@ -31,10 +32,16 @@
       flex-wrap: wrap;
     }
 
+    .logo-nav-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
     .logo {
       font-weight: bold;
       font-size: 24px;
-      margin-right: 40px;
     }
 
     .nav-left,
@@ -51,6 +58,11 @@
       text-decoration: none;
       color: #222;
       font-weight: 500;
+    }
+
+    .nav-left a.dropdown::after {
+      content: " ▼";
+      font-size: 10px;
     }
 
     .new-label {
@@ -96,15 +108,27 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .logo {
-        margin-bottom: 10px;
+
+      .logo-nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
+
+      .logo {
+        margin-bottom: 5px;
+      }
+
       .nav-left {
-        margin-bottom: 10px;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 10px;
       }
+
+      .nav-left a {
+        font-size: 18px;
+      }
+
       .search-container {
         margin: 10px 0;
         width: 100%;
@@ -113,10 +137,12 @@
         justify-content: space-between;
         gap: 10px;
       }
+
       .search-input {
         flex: 1;
         width: auto;
       }
+
       .be-pro-button {
         width: auto;
       }
@@ -125,10 +151,10 @@
 </head>
 <body>
   <header>
-    <div style="display: flex; align-items: center;">
-      <div class="logo">SocialNet.</div>
+    <div class="logo-nav-container">
+      <div class="logo">W.</div>
       <div class="nav-left">
-        <a href="#">Explore</a>
+        <a href="#" class="dropdown">Explore</a>
         <a href="#">Directory</a>
         <a href="#">Academy <span class="new-label">New</span></a>
         <a href="#">Jobs</a>
