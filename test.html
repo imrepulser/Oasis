@@ -19,7 +19,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
     html {
-      overscroll-behavior: auto;
       scrollbar-color: #AAEEC4 transparent;
       scrollbar-width: thin;
       background-color: #AAEEC4;
@@ -56,16 +55,13 @@
       font-style: italic;
     }
 
-    .nav-left,
-    .nav-center,
-    .nav-right {
+    .nav-left {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .nav-left a,
-    .nav-right a {
+    .nav-left a {
       margin-right: 15px;
       text-decoration: none;
       color: #222;
@@ -123,9 +119,34 @@
        background: transparent;
     }
 
-    .content {
-      padding: 20px;
-      height: 150vh;
+    .menu-icon {
+      display: none;
+      width: 24px;
+      height: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .menu-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle at 25% 25%, #222 3px, transparent 4px,
+        circle at 50% 25%, #222 3px, transparent 4px,
+        circle at 75% 25%, #222 3px, transparent 4px,
+        circle at 25% 50%, #222 3px, transparent 4px,
+        circle at 50% 50%, #222 3px, transparent 4px,
+        circle at 75% 50%, #222 3px, transparent 4px,
+        circle at 25% 75%, #222 3px, transparent 4px,
+        circle at 50% 75%, #222 3px, transparent 4px,
+        circle at 75% 75%, #222 3px, transparent 4px
+      );
     }
 
     @media (max-width: 768px) {
@@ -135,27 +156,39 @@
       }
 
       .logo-nav-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
         gap: 10px;
+        width: 100%;
+      }
+
+      .menu-icon {
+        display: block;
+        order: 1;
       }
 
       .logo {
-        font-family: "Ancizar Serif", serif;
-        font-weight: 500;
-        font-size: 30px;
-        font-style: italic;
+        order: 2;
         margin-bottom: 5px;
       }
 
       .nav-left {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: -2px;
+        order: 3;
+        flex-direction: column;
         width: 100%;
+        display: none;
+      }
+
+      .nav-left.active {
+        display: flex;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       .nav-left a {
+        margin: 10px 0;
         font-size: 18px;
         flex-shrink: 0;
       }
@@ -183,6 +216,7 @@
 <body>
   <header>
     <div class="logo-nav-container">
+      <button class="menu-icon" aria-label="Toggle menu"></button>
       <div class="logo">SocialNet.</div>
       <div class="nav-left">
         <a href="#">Explore</a>
@@ -196,4 +230,14 @@
       <button class="be-pro-button">Be Pro</button>
     </div>
   </header>
+
+  <script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLeft = document.querySelector('.nav-left');
+
+    menuIcon.addEventListener('click', () => {
+      navLeft.classList.toggle('active');
+    });
+  </script>
+</body>
 </html>
