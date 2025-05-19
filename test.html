@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="SocialNet, inspiration, directory, academy, jobs, engineering, books" />
+  <meta name="author" content="Sreeman Reddy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="SocialNet" />
+  <meta property="og:description" content="Explore, learn, and grow on SocialNet." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SocialNet" />
+  <meta name="twitter:description" content="Explore, learn, and grow on SocialNet." />
+  <meta name="twitter:image" content="./img/twitterimg.jpg" />
   <title>SocialNet</title>
   <style>
     body {
@@ -12,7 +24,6 @@
     }
 
     header {
-      background-color: #eee;
       padding: 10px 20px;
       display: flex;
       align-items: center;
@@ -23,7 +34,7 @@
     .logo {
       font-weight: bold;
       font-size: 24px;
-      margin-right: 40px; /* Added spacing between logo and links */
+      margin-right: 40px;
     }
 
     .nav-left,
@@ -42,11 +53,6 @@
       font-weight: 500;
     }
 
-    .nav-left a.dropdown::after {
-      content: " ▼";
-      font-size: 10px;
-    }
-
     .new-label {
       background-color: #000;
       color: #fff;
@@ -56,14 +62,17 @@
       margin-left: 4px;
     }
 
-    .search-bar {
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       flex: 1;
-      max-width: 400px;
+      max-width: 500px;
       margin: 10px auto;
     }
 
     .search-input {
-      width: 100%;
+      flex: 1;
       padding: 8px 12px;
       font-size: 14px;
       border: none;
@@ -71,41 +80,63 @@
       background-color: #e0e0e0;
     }
 
+    .be-pro-button {
+      background-color: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .logo {
         margin-bottom: 10px;
       }
-
       .nav-left {
         margin-bottom: 10px;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 10px;
       }
-
-      .search-bar {
+      .search-container {
         margin: 10px 0;
-        width: 90%; /* Reduced width on small devices */
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .search-input {
+        flex: 1;
+        width: auto;
+      }
+      .be-pro-button {
+        width: auto;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">SocialNet.</div>
-    <div class="nav-left">
-      <a href="#">Explore</a>
-      <a href="#">Directory</a>
-      <a href="#">Academy <span class="new-label">New</span></a>
-      <a href="#">Jobs</a>
+    <div style="display: flex; align-items: center;">
+      <div class="logo">SocialNet.</div>
+      <div class="nav-left">
+        <a href="#">Explore</a>
+        <a href="#">Directory</a>
+        <a href="#">Academy <span class="new-label">New</span></a>
+        <a href="#">Jobs</a>
+      </div>
     </div>
-    <div class="search-bar">
+    <div class="search-container">
       <input type="text" class="search-input" placeholder="Search by Inspiration" />
+      <button class="be-pro-button">Be Pro</button>
     </div>
   </header>
 </body>
