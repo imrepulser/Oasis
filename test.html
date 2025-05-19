@@ -16,228 +16,229 @@
     <meta name="twitter:description" content="Explore, learn, and grow on SocialNet." />
     <meta name="twitter:image" content="./img/twitterimg.jpg" />
     <title>SocialNet - A digital library.</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
-    html {
-      scrollbar-color: #AAEEC4 transparent;
-      scrollbar-width: thin;
-      background-color: #AAEEC4;
-    }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+        html {
+            scrollbar-color: #AAEEC4 transparent;
+            scrollbar-width: thin;
+            background-color: #AAEEC4;
+        }
 
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #d2d0d0;
-      min-height: 100vh;
-    }
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d2d0d0;
+            min-height: 100vh;
+        }
 
-    header {
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+        header {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-    .logo-nav-container {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+        .logo-nav-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    .logo {
-      font-family: "Ancizar Serif", serif;
-      font-weight: 500;
-      font-size: 30px;
-      font-style: italic;
-    }
+        .logo {
+            font-family: "Ancizar Serif", serif;
+            font-weight: 500;
+            font-size: 30px;
+            font-style: italic;
+        }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    .nav-left a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-    }
+        .nav-left a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+        }
 
-    .new-label {
-      background-color: #222;
-      color: #fff;
-      font-size: 14px;
-      padding: 2px 5px;
-      border-radius: 4px;
-      margin-left: -2px;
-    }
+        .new-label {
+            background-color: #222;
+            color: #fff;
+            font-size: 14px;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-left: -2px;
+        }
 
-    .search-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex: 1;
-      max-width: 500px;
-      margin: 10px auto;
-    }
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            max-width: 500px;
+            margin: 10px auto;
+        }
 
-    .search-input {
-      flex: 1;
-      padding: 10px 12px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background-color: #dbdada;
-    }
+        .search-input {
+            flex: 1;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #dbdada;
+        }
 
-    .be-pro-button {
-      background-color: #222;
-      color: #fff;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+        .be-pro-button {
+            background-color: #222;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
 
-    ::-webkit-scrollbar {
-       width: 8px;
-    }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-    ::-webkit-scrollbar-thumb {
-       background-color: #AAEEC4;
-       border-radius: 10px;
-    }
+        ::-webkit-scrollbar-thumb {
+            background-color: #AAEEC4;
+            border-radius: 10px;
+        }
 
-    ::-webkit-scrollbar-track {
-       background: transparent;
-    }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
 
-    .menu-icon {
-      display: none;
-      width: 24px;
-      height: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      position: relative;
-    }
+        .menu-icon {
+            display: none;
+            width: 24px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
 
-    .menu-icon::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(
-        circle at 25% 25%, #222 3px, transparent 4px,
-        circle at 50% 25%, #222 3px, transparent 4px,
-        circle at 75% 25%, #222 3px, transparent 4px,
-        circle at 25% 50%, #222 3px, transparent 4px,
-        circle at 50% 50%, #222 3px, transparent 4px,
-        circle at 75% 50%, #222 3px, transparent 4px,
-        circle at 25% 75%, #222 3px, transparent 4px,
-        circle at 50% 75%, #222 3px, transparent 4px,
-        circle at 75% 75%, #222 3px, transparent 4px
-      );
-    }
+        .menu-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at 25% 25%, #222 3px, transparent 4px,
+                circle at 50% 25%, #222 3px, transparent 4px,
+                circle at 75% 25%, #222 3px, transparent 4px,
+                circle at 25% 50%, #222 3px, transparent 4px,
+                circle at 50% 50%, #222 3px, transparent 4px,
+                circle at 75% 50%, #222 3px, transparent 4px,
+                circle at 25% 75%, #222 3px, transparent 4px,
+                circle at 50% 75%, #222 3px, transparent 4px,
+                circle at 75% 75%, #222 3px, transparent 4px
+            );
+        }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-      .logo-nav-container {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-      }
+            .logo-nav-container {
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+            }
 
-      .menu-icon {
-        display: block;
-        order: 1;
-      }
+            .menu-icon {
+                display: block;
+                order: 1;
+            }
 
-      .logo {
-        order: 2;
-        margin-bottom: 5px;
-      }
+            .logo {
+                order: 2;
+                margin-bottom: 5px;
+            }
 
-      .nav-left {
-        order: 3;
-        flex-direction: column;
-        width: 100%;
-        display: none;
-      }
+            .nav-left {
+                order: 3;
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
 
-      .nav-left.active {
-        display: flex;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
+            .nav-left.active {
+                display: flex;
+                background-color: #fff;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
 
-      .nav-left a {
-        margin: 10px 0;
-        font-size: 18px;
-        flex-shrink: 0;
-      }
+            .nav-left a {
+                margin: 10px 0;
+                font-size: 18px;
+                flex-shrink: 0;
+            }
 
-      .search-container {
-        margin: 10px 0;
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 10px;
-      }
+            .search-container {
+                margin: 10px 0;
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 10px;
+            }
 
-      .search-input {
-        flex: 1;
-        width: auto;
-      }
+            .search-input {
+                flex: 1;
+                width: auto;
+            }
 
-      .be-pro-button {
-        width: auto;
-      }
-    }
-  </style>
+            .be-pro-button {
+                width: auto;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo-nav-container">
-      <button class="menu-icon" aria-label="Toggle menu"></button>
-      <div class="logo">SocialNet.</div>
-      <div class="nav-left">
-        <a href="#">Explore</a>
-        <a href="#">Directory</a>
-        <a href="#">Academy <span class="new-label">New</span></a>
-        <a href="#">Jobs</a>
-      </div>
-    </div>
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search by Inspiration" />
-      <button class="be-pro-button">Be Pro</button>
-    </div>
-  </header>
+    <header>
+        <div class="logo-nav-container">
+            <button class="menu-icon" aria-label="Toggle menu"></button>
+            <div class="logo">SocialNet.</div>
+            <div class="nav-left">
+                <a href="#">Explore</a>
+                <a href="#">Directory</a>
+                <a href="#">Academy <span class="new-label">New</span></a>
+                <a href="#">Jobs</a>
+                <a href="#">Market</a> <!-- Added Market link -->
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search by Inspiration" />
+            <button class="be-pro-button">Be Pro</button>
+        </div>
+    </header>
 
-  <script>
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLeft = document.querySelector('.nav-left');
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLeft = document.querySelector('.nav-left');
 
-    menuIcon.addEventListener('click', () => {
-      navLeft.classList.toggle('active');
-    });
-  </script>
+        menuIcon.addEventListener('click', () => {
+            navLeft.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
