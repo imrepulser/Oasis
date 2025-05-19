@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
     <meta name="keywords" content="SocialNet, inspiration, directory, academy, jobs, engineering, books" />
     <meta name="author" content="Sreeman Reddy" />
     <meta name="robots" content="index, follow" />
@@ -17,12 +17,20 @@
     <meta name="twitter:image" content="./img/twitterimg.jpg" />
     <title>SocialNet - A digital library.</title>
   <style>
-    html, body {
+    html {
+      overscroll-behavior: contain;
+      scrollbar-color: #AAEEC4 transparent;
+      scrollbar-width: thin;
+      background-color: #5F8275; /* Green background for overscroll effect */
+    }
+
+    body {
       max-width: 100%;
       overflow-x: hidden;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
+      min-height: 100vh; /* Ensure body takes full viewport height */
     }
 
     header {
@@ -97,6 +105,25 @@
       font-size: 14px;
       cursor: pointer;
       white-space: nowrap;
+    }
+
+    ::-webkit-scrollbar {
+       width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+       background-color: #AAEEC4;
+       border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+       background: transparent;
+    }
+
+    /* Add some dummy content to make the page scrollable */
+    .content {
+      padding: 20px;
+      height: 150vh; /* Make the content taller than the viewport to enable scrolling */
     }
 
     @media (max-width: 768px) {
