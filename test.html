@@ -1,287 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
-    <meta name="keywords" content="SocialNet, inspiration, directory, academy, jobs, engineering, books" />
-    <meta name="author" content="Sreeman Reddy" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="SocialNet" />
-    <meta property="og:description" content="Explore, learn, and grow on SocialNet." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourwebsite.com" />
-    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SocialNet" />
-    <meta name="twitter:description" content="Explore, learn, and grow on SocialNet." />
-    <meta name="twitter:image" content="./img/twitterimg.jpg" />
-    <title>SocialNet - A digital library.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Run large language models locally with Ollama">
+    <meta name="keywords" content="large language models, Ollama, DeepSeek, Qwen, Llama, Gemma">
+    <meta name="author" content="Ollama Inc.">
+    <title>Ollama - Run Large Language Models Locally</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
-        html {
-            scrollbar-color: #AAEEC4 transparent;
-            scrollbar-width: thin;
-            background-color: #AAEEC4;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
-            max-width: 100%;
-            overflow-x: hidden;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #d2d0d0;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            color: #000;
         }
 
         header {
-            padding: 10px 20px;
+            width: 100%;
+            max-width: 1200px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
+            align-items: center;
+            padding: 20px 40px;
         }
 
-        .logo-nav-container {
+        .logo img {
+            width: 24px;
+            height: 24px;
+        }
+
+        nav {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
             gap: 20px;
         }
 
-        .logo {
-            font-family: "Ancizar Serif", serif;
-            font-weight: 500;
-            font-size: 30px;
-            font-style: italic;
-        }
-
-        .nav-left {
+        .nav-links {
             display: flex;
-            align-items: center;
-            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .nav-left a {
-            margin-right: 15px;
+        nav a {
             text-decoration: none;
-            color: #222;
+            color: #000;
+            font-size: 16px;
             font-weight: 500;
         }
 
-        .new-label {
-            background-color: #222;
-            color: #fff;
+        .search-bar {
+            display: none;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f5f5f5;
             font-size: 14px;
-            padding: 2px 5px;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 1;
-            max-width: 500px;
+            width: 100%;
+            max-width: 300px;
             margin: 10px auto;
         }
 
-        .search-input {
-            flex: 1;
-            padding: 10px 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            background-color: #dbdada;
-        }
-
-        .be-pro-button {
-            background-color: #222;
-            color: #fff;
+        .be-pro-btn {
             padding: 8px 16px;
             border: none;
-            border-radius: 8px;
+            border-radius: 20px;
             font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
-            white-space: nowrap;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
+        .be-pro-btn::after {
+            content: "↓";
+            font-size: 12px;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background-color: #AAEEC4;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .menu-icon {
+        .hamburger {
             display: none;
-            width: 24px;
-            height: 24px;
-            background: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        main {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .llama-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .explore-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
             border: none;
             cursor: pointer;
-            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .menu-icon span {
-            display: block;
+        .explore-btn::after {
+            content: "→";
+        }
+
+        .platforms {
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        footer {
             width: 100%;
-            height: 3px;
-            background-color: #222;
-            position: absolute;
-            left: 0;
-            transition: all 0.3s ease;
+            max-width: 1200px;
+            text-align: center;
+            padding: 20px 0;
         }
 
-        .menu-icon span:nth-child(1) {
-            top: 3px;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
         }
 
-        .menu-icon span:nth-child(2) {
-            top: 10px;
+        .footer-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
         }
 
-        .menu-icon span:nth-child(3) {
-            top: 17px;
-        }
-
-        .menu-icon.active span:nth-child(1) {
-            transform: rotate(45deg);
-            top: 10px;
-        }
-
-        .menu-icon.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-icon.active span:nth-child(3) {
-            transform: rotate(-45deg);
-            top: 10px;
+        .copyright {
+            font-size: 12px;
+            color: #999;
         }
 
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                align-items: flex-start;
+                padding: 20px;
+                position: relative;
             }
 
-            .logo-nav-container {
-                flex-direction: row;
-                align-items: center;
-                gap: 10px;
-                width: 100%;
+            .nav-links {
+                display: none;
             }
 
-            .menu-icon {
-                display: block;
-                order: 1;
-            }
-
-            .logo {
-                order: 2;
-                margin-bottom: 5px;
-            }
-
-            .nav-left {
-                order: 3;
-                flex-direction: column;
-                width: 100%;
+            .nav-menu {
                 display: none;
                 position: fixed;
                 top: 0;
                 left: 0;
+                width: 100%;
                 height: 100vh;
-                background-color: #d2d0d0;
-                padding: 20px;
+                background-color: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 20px;
                 z-index: 1000;
             }
 
-            .nav-left.active {
+            .nav-menu.active {
                 display: flex;
             }
 
-            .nav-left a {
-                margin: 0;
-                font-size: 18px;
-                flex-shrink: 0;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 15px 0;
+            .nav-menu a {
+                font-size: 24px;
+                margin: 15px 20px;
             }
 
-            .nav-left a:not(:last-child)::after {
-                content: '';
+            .hamburger {
+                display: block;
+            }
+
+            .be-pro-btn {
+                display: none;
+            }
+
+            .search-bar {
+                display: block;
+            }
+
+            .close-icon {
                 position: absolute;
-                width: 100%;
-                height: 1px;
-                background-color: #000;
-                bottom: 0;
-                left: 0;
+                top: 20px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
             }
 
-            .nav-left a {
-                position: relative;
+            h1 {
+                font-size: 32px;
             }
 
-            .search-container {
-                margin: 10px 0;
-                width: 100%;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                gap: 10px;
+            p {
+                font-size: 16px;
             }
 
-            .search-input {
-                flex: 1;
-                width: auto;
+            .explore-btn {
+                font-size: 14px;
+                padding: 10px 20px;
             }
+        }
 
-            .be-pro-button {
-                width: auto;
+        @media (min-width: 769px) {
+            .logo-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-nav-container">
-            <button class="menu-icon" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="logo">SocialNet.</div>
-            <div class="nav-left">
-                <a href="#">Explore</a>
-                <a href="#">Directory</a>
-                <a href="#">Academy <span class="new-label">New</span></a>
-                <a href="#">Jobs</a>
-                <a href="#">FAQs</a>
-                <a href="#">Support</a>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/24" alt="Ollama Logo">
+            </div>
+            <div class="nav-links">
+                <a href="#">Discord</a>
+                <a href="#">GitHub</a>
             </div>
         </div>
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search by Inspiration" />
-            <button class="be-pro-button">Be Pro</button>
-        </div>
+        <nav>
+            <div class="nav-menu">
+                <a href="#">Discord</a>
+                <a href="#">GitHub</a>
+                <a href="#">Sign in</a>
+                <div class="close-icon">×</div>
+            </div>
+            <button class="be-pro-btn">Be Pro</button>
+            <div class="hamburger">☰</div>
+        </nav>
     </header>
+    <input type="text" class="search-bar" placeholder="Search models">
+
+    <main>
+        <img src="https://via.placeholder.com/40" alt="Llama Icon" class="llama-icon">
+        <h1>Get up and running with large language models.</h1>
+        <p>Run DeepSeek-R1, Qwen 3, Llama 3.3, Qwen 2.5-VL, Gemma 3, and other models, locally.</p>
+        <button class="explore-btn">Explore models</button>
+        <div class="platforms">Available for macOS, Linux, and Windows</div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">GitHub</a>
+            <a href="#">Blog</a>
+            <a href="#">Discord</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">Docs</a>
+            <a href="#">Meetups</a>
+        </div>
+        <div class="copyright">© 2025 Ollama Inc.</div>
+    </footer>
 
     <script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const navLeft = document.querySelector('.nav-left');
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const closeIcon = document.querySelector('.close-icon');
 
-        menuIcon.addEventListener('click', () => {
-            menuIcon.classList.toggle('active');
-            navLeft.classList.toggle('active');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.add('active');
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navMenu.classList.remove('active');
         });
     </script>
 </body>
