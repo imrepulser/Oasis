@@ -22,15 +22,19 @@
             font-family: 'Geist Mono', monospace;
             background-color: rgb(229, 231, 235);
             display: flex;
-            justify-content: left;
-            align-items: left;
-            min-height: 100vh;
-            padding: 40px;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+            height: 100vh; /* Full viewport height */
             box-sizing: border-box;
         }
         .container {
             max-width: 600px;
+            width: 100%; /* Make sure it takes up the available width */
             text-align: left;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .logo {
             font-size: 24px;
@@ -52,6 +56,8 @@
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid rgb(255, 74, 0);
         }
     </style>
 </head>
@@ -59,7 +65,7 @@
     <div class="container">
         <div class="logo">SocialNet.</div>
         <p class="description">
-            An interactive demo for developers to try the new digitalized ai model in the Air API.
+            An interactive demo for developers to try the new digitalized AI model in the Air API.
         </p>
         <a href="./index/index.html" class="explore-link">START EXPLORING ⍈</a>
     </div>
