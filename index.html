@@ -14,10 +14,7 @@
     }
     header {
       padding: 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      position: relative;
       background: #000;
       z-index: 1000;
     }
@@ -83,7 +80,7 @@
       100% { opacity: 0; display: none; }
     }
     .content {
-      margin-top: 220px;
+      margin-top: 2rem;
       padding: 2rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -116,7 +113,7 @@
     }
     @media (max-width: 600px) {
       .content {
-        margin-top: 300px;
+        margin-top: 3rem;
       }
     }
   </style>
