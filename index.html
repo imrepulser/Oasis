@@ -1,74 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An interactive demo for developers to try the new digitalized AI model in the Air API.">
-    <meta name="keywords" content="SocialNet, AI model, Air API, developer demo, interactive demo">
-    <meta name="author" content="Sreeman Reddy">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SocialNet - A digital library.">
-    <meta name="twitter:description" content="An interactive demo for developers to try the new digitalized AI model in the Air API.">
-    <meta name="twitter:image" content="./img/og.jpeg">
-    <meta name="twitter:site" content="@SocialNetEng">
-    <title>SocialNet - A digital library.</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: 'Geist Mono', monospace;
-            background-color: rgb(229, 231, 235);
-        }
-
-        body {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 40px;
-            box-sizing: border-box;
-        }
-
-        .container {
-            max-width: 600px;
-            text-align: left;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: normal;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-        }
-
-        .description {
-            font-size: 16px;
-            color: rgb(106, 106, 106);
-            font-weight: 200;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .explore-link {
-            display: inline-block;
-            font-size: 16px;
-            color: rgb(255, 74, 0);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialNet. - AI Tool Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:wght@300&family=Geist+Mono:wght@200&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Geist Mono', monospace;
+      background: #000;
+      color: #fff;
+    }
+    header {
+      padding: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    header h1 {
+      font-family: 'Ancizar Serif', serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    header p {
+      font-family: 'Geist Mono', monospace;
+      font-weight: 200;
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    .submit-button {
+      font-family: 'Geist Mono', monospace;
+      font-weight: 200;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      transition: transform 0.2s;
+    }
+    .submit-button:hover {
+      transform: scale(1.05);
+    }
+    .content {
+      margin-top: 180px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .tool {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: transform 0.2s;
+    }
+    .tool:hover {
+      transform: scale(1.03);
+    }
+    .tool a {
+      font-family: 'Ancizar Serif', serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .tool p {
+      font-family: 'Geist Mono', monospace;
+      font-weight: 200;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">SocialNet.</div>
-        <p class="description">
-            Move fast and break things.
-        </p>
-        <a href="./index/index.html" class="explore-link">START EXPLORING ⍈</a>
+  <header>
+    <h1>SocialNet.</h1>
+    <p>Discover a curated list of powerful AI tools for productivity, learning, development, and more.</p>
+    <button class="submit-button">+ Submit</button>
+  </header>
+  <main class="content">
+    <div class="tool">
+      <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+      <p>Used for getting single-shot answers to questions, alternative to Google Search.</p>
     </div>
+    <div class="tool">
+      <a href="https://www.character.ai/" target="_blank">Character.AI</a>
+      <p>Talk to AI chatbots based on various characters.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Generative AI Tech</a>
+      <p>Voice/video cloning from small clips or images.</p>
+    </div>
+    <div class="tool">
+      <a href="https://www.make.com/" target="_blank">Make, Zapier, n8n, Cru</a>
+      <p>Build automations and AI agents.</p>
+    </div>
+    <div class="tool">
+      <a href="https://fireflies.ai/" target="_blank">Fireflies.ai</a>
+      <p>Meeting assistant that takes notes automatically.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Jerry</a>
+      <p>Internal AI assistant to access Slack notes and meeting info.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Devin</a>
+      <p>AI software engineer that can write code.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Bolt, Lovable, Replit, Vercel v0</a>
+      <p>Build full products by describing what you want.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Cursor, Windsurf</a>
+      <p>Advanced tools that write code for non-devs too.</p>
+    </div>
+    <div class="tool">
+      <a href="https://platform.openai.com/playground" target="_blank">OpenAI Playground</a>
+      <p>Experiment with AI model settings.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Claude Sonnet</a>
+      <p>Anthropic model used for studying how AI "thinks".</p>
+    </div>
+    <div class="tool">
+      <a href="https://notebooklm.google.com/" target="_blank">NotebookLM</a>
+      <p>Convert content into podcast-like format.</p>
+    </div>
+    <div class="tool">
+      <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>
+      <p>AI that can join calls, share screen, solve problems with you.</p>
+    </div>
+    <div class="tool">
+      <a href="https://theresanaiforthat.com/" target="_blank">There's An AI For That</a>
+      <p>Search for any AI tool by category or function.</p>
+    </div>
+    <div class="tool">
+      <a href="https://www.producthunt.com/" target="_blank">Product Hunt</a>
+      <p>Discover and explore new AI tools daily.</p>
+    </div>
+    <div class="tool">
+      <a href="https://www.khanacademy.org/khan-labs" target="_blank">Khanmigo</a>
+      <p>AI tutor designed for kids to guide learning.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Gemini</a>
+      <p>Deep research assistant powered by Google.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Emily (Chrome Extension)</a>
+      <p>Summarizes YouTube videos and websites; chat with the content.</p>
+    </div>
+    <div class="tool">
+      <a href="#">Chat-based AI Tools</a>
+      <p>Common tools like ChatGPT used for various content creation tasks.</p>
+    </div>
+    <div class="tool">
+      <a href="#">AI Models</a>
+      <p>Foundational tech like GPT-4.5, Claude 3, used in many tools.</p>
+    </div>
+  </main>
 </body>
 </html>
