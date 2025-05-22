@@ -79,6 +79,22 @@
       80% { opacity: 1; }
       100% { opacity: 0; display: none; }
     }
+    .search-bar {
+      display: none;
+      margin-top: 2rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: white;
+      font-family: 'Geist Mono', monospace;
+      font-weight: 200;
+      font-size: 1rem;
+    }
     .content {
       margin-top: 2rem;
       padding: 2rem;
@@ -115,6 +131,10 @@
       .content {
         margin-top: 3rem;
       }
+      .search-bar {
+        display: block;
+        padding: 0 2rem;
+      }
     }
   </style>
   <script>
@@ -124,6 +144,20 @@
       setTimeout(() => {
         alert.style.display = 'none';
       }, 3000);
+    }
+
+    function filterTools() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const tools = document.querySelectorAll('.tool');
+      tools.forEach(tool => {
+        const name = tool.querySelector('a').textContent.toLowerCase();
+        const description = tool.querySelector('p').textContent.toLowerCase();
+        if (name.includes(input) || description.includes(input)) {
+          tool.style.display = '';
+        } else {
+          tool.style.display = 'none';
+        }
+      });
     }
   </script>
 </head>
@@ -137,6 +171,9 @@
       <a href="https://x.com/arts4artist" target="_blank" title="Visit X">𝕏</a>
     </div>
   </header>
+  <div class="search-bar">
+    <input type="text" id="search" class="search-input" placeholder="Search AI tools..." oninput="filterTools()" />
+  </div>
   <main class="content">
     <div class="tool">
       <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
