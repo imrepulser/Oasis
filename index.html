@@ -17,6 +17,9 @@
       position: fixed;
       top: 0;
       left: 0;
+      right: 0;
+      background: #000;
+      z-index: 1000;
     }
     header h1 {
       font-family: 'Ancizar Serif', serif;
@@ -30,6 +33,11 @@
       font-size: 1rem;
       opacity: 0.7;
       margin-bottom: 1rem;
+    }
+    .submit-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
     .submit-button {
       font-family: 'Geist Mono', monospace;
@@ -48,8 +56,34 @@
     .submit-button:hover {
       transform: scale(1.05);
     }
+    .submit-container a {
+      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .alert {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: red;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      font-family: 'Geist Mono', monospace;
+      z-index: 2000;
+      animation: fadeOut 3s forwards;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
     .content {
-      margin-top: 180px;
+      margin-top: 220px;
       padding: 2rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -80,13 +114,31 @@
       font-size: 0.95rem;
       color: #ccc;
     }
+    @media (max-width: 600px) {
+      .content {
+        margin-top: 300px;
+      }
+    }
   </style>
+  <script>
+    function showError() {
+      const alert = document.getElementById('alert');
+      alert.style.display = 'block';
+      setTimeout(() => {
+        alert.style.display = 'none';
+      }, 3000);
+    }
+  </script>
 </head>
 <body>
+  <div class="alert" id="alert">Error 505</div>
   <header>
     <h1>SocialNet.</h1>
     <p>Discover a curated list of powerful AI tools for productivity, learning, development, and more.</p>
-    <button class="submit-button">+ Submit</button>
+    <div class="submit-container">
+      <button class="submit-button" onclick="showError()">+ Submit</button>
+      <a href="https://x.com/arts4artist" target="_blank" title="Visit X">𝕏</a>
+    </div>
   </header>
   <main class="content">
     <div class="tool">
